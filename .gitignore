@@ -1,0 +1,51 @@
+# Ignore Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore environment and IDE settings
+.env
+.venv/
+env/
+venv/
+ENV/
+*.env
+*.env.*
+*.vscode/
+*.idea/
+*.swp
+
+# Ignore Django specific files
+link_shrter/db.sqlite3
+link_shrter/staticfiles/
+link_shrter/media/
+link_shrter/*.log
+
+# Ignore migrations
+link_shrter/*/migrations/
+link_shrter/*/migrations/*.pyc
+link_shrter/*/migrations/*.py
+
+# Ignore pytest cache
+pytest_cache/
+__pycache__/
+
+# Ignore bytecode
+*.py[cod]
+
+# Ignore the coverage report
+.coverage
+htmlcov/
+.coverage.*
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore node_modules if you have any frontend dependencies
+node_modules/
+
+# Ignore any logs
+*.log
+
+# Ignore local config files
+local_settings.py
