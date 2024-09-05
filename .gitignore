@@ -4,11 +4,11 @@ __pycache__/
 *$py.class
 
 # Ignore environment and IDE settings
-.env
-.venv/
-env/
-venv/
-ENV/
+link_shrter/.env
+link_shrter/venv/
+link_shrter/env/
+link_shrter/venv/
+link_shrter/ENV/
 *.env
 *.env.*
 *.vscode/
