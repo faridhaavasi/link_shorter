@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  postgres_project:
+    container_name: postgres_project_container
+    image: postgres:15
+    hostname: ${DB_HOST}
+    command: -p ${DB_PORT}
+    restart: always
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+    expose:
+      - ${DB_PORT}
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+    volumes:
+      - ./data/project/postgres:/var/lib/postgresql/data
+    networks:
+      - main_project_network
+
+  redis_project:
+    container_name: ${REDIS_HOST}
+    hostname: ${REDIS_HOST}
+    image: redis:latest
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+    restart: always
+    command: redis-server --requirepass ${REDIS_PASSWORD} --port ${REDIS_PORT}
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+      REDIS_PORT: ${REDIS_PORT}
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis.conf
+    networks:
+      - main_project_network
+
+networks:
+  main_project_network:
+
+volumes:
+  data:
