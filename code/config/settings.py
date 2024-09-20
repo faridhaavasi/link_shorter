@@ -200,6 +200,8 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 #     "127.0.0.1",
 # ]
 
+AUTH_USER_MODEL = 'user.User'
+
 
 from config.apps_settings.drf import *
 from config.apps_settings.api_docs import *
