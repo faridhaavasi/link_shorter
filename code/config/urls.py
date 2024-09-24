@@ -28,7 +28,6 @@ docs_urls = [
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('apps.api.urls'), name='api'),
     path('api/authentication', include('apps.authentication.urls'), name='authentication')
 ] + docs_urls
 
