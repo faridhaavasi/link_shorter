@@ -23,6 +23,8 @@ class SettingPhoneNumberApi(APIView):
                 error = 'Phone number is required'
                 return Response(data={'error': error}, status=status.HTTP_400_BAD_REQUEST)
             otp_code = randint(1000, 9999)
+            # TODO send sms function otp in interface
+            print(otp_code)
             token = str(uuid.uuid4())
             cache.set(f"{token}_phone_number", phone_number, timeout=300)
             cache.set(f"{token}_otp", otp_code, timeout=300)
