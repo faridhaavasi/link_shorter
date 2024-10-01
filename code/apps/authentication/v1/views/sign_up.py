@@ -46,7 +46,7 @@ class VerifyOTPApi(APIView):
                 error = 'token or otp is not none'
                 return Response(data={'error': error}, status=status.HTTP_400_BAD_REQUEST)
             stored_otp = cache.get(f"{token}_otp")
-            if otp == stored_otp:
+            if otp == str(stored_otp):
                 result = {'token': token}
                 return Response(data=result, status=status.HTTP_200_OK)
             else:
